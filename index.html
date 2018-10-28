@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>beenature</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="dist/css/main-style.min.css">
+    </head>
+    <body>
+        <main class="container">
+            <section class="intro">
+                <!-- logo -->
+                <img src="dist/assets/img/logo.svg" alt="logo" class="intro_logo">
+                <!-- main text -->
+                <div class="intro_claim">
+                    <h1 class="heading_primary u-margin-top-none">In the nature we lose our mind and find our souls!</h1>
+                    <p class="quote">"Like all great travellers, I have seen more than I remember, and remember more than I have seen."</p>
+                    <p class="quote_author u-margin-top-sm">-- Benjamin Disraeli</p>
+                </div>
+                <!-- cards sub title -->
+                <h2 class="cards_title heading_small u-text-uppercase visit_title">discover:</h2>
+                <!-- discover cards -->
+                <div class="cards">
+                    <div class="card card--1 ">
+                        <div class="card_img card_img--1"></div>
+                        <h2 class="heading_second">Forests</h2>
+                        <div class="card_rating">
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                        </div>
+                        <p class="paragraph_small">3.186 reviews</p>
+                    </div>
+
+                    <div class="card card--2">
+                        <div class="card_img card_img--2"></div>
+                        <h2 class="heading_second">Lakes</h2>
+                        <div class="card_rating">
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                        </div>
+                        <p class="paragraph_small">2.360 reviews</p>
+                    </div>
+
+                    <div class="card card--3">
+                        <div class="card_img card_img--3"></div>
+                        <h2 class="heading_second">Deserts</h2>
+                        <div class="card_rating">
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                        </div>
+                        <p class="paragraph_small">3.865 reviews</p>
+                    </div>
+
+                    <div class="card card--4">
+                        <div class="card_img card_img--4"></div>
+                        <h2 class="heading_second">Mountains</h2>
+                        <div class="card_rating">
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                            <div class="card_rating_item"></div>
+                        </div>
+                        <p class="paragraph_small">1.782 reviews</p>
+                    </div>
+                </div>
+            </section>
+            <!-- checkboxes - video section control -->
+            <input type="checkbox" class="video_open" id="video_toggle">
+            <input type="checkbox" class="video_close" id="video_toggle">
+            <!-- video section -->
+            <section class="video">
+                <!-- checkbox label button - show video section -->
+                <label for="video_toggle" class="video_btn video_btn--open">
+                    <svg class="video_icon video_icon--open">
+                        <use xlink:href="dist/assets/img/sprite.svg#icon-play3"></use>
+                    </svg>
+                </label>
+                <!-- checkbox label button - hide video section -->
+                <label for="video_toggle" class="video_btn video_btn--close">
+                    <svg class="video_icon video_icon--close">
+                        <use xlink:href="dist/assets/img/sprite.svg#icon-cross"></use>
+                    </svg>
+                </label>
+                <!-- video on background -->
+                <div class="video_bg">
+                    <video class="video_bg_content" autoplay muted loop>
+                        <source src="dist/assets/vid/vid01.mp4" type="video/mp4">
+                        Your browser is not supported!
+                    </video>
+                    <!-- youtube video -->
+                    <div class="video_frame">
+                        <div class="video_frame_wrapper">
+                            <iframe width="853" height="480" src="https://www.youtube.com/embed/LK0UM_TfZr8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

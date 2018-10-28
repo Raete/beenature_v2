@@ -1,0 +1,38 @@
+// main container
+.container {
+    display: flex;
+    width: 100vw;
+    background: $color-grey-light-1;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+// cards section
+.cards {
+    grid-area: cards;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 10px;
+    padding-bottom: 20px;
+
+    @media only screen and (max-width: 1260px) {
+        grid-template-columns: repeat(auto-fill, 100px);
+    }
+    @media only screen and (max-width: 800px) {
+        grid-gap: 0;
+    }
+    @media only screen and (max-width: 400px) {
+        display: none;
+    }
+
+    &_title {
+        grid-area: title;
+        animation-name: toRight;
+        animation-duration: .8s;
+        animation-timing-function: ease-out;
+        @media only screen and (max-width: 400px) {
+            display: none;
+        }
+    }
+}

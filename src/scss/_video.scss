@@ -1,0 +1,194 @@
+// video section
+.video {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(65%);
+    transition: all .5s;
+    background: transparent;
+
+    @media only screen and (max-width: 1360px) {
+        transform: translateX(70%);
+    }
+    @media only screen and (max-width: 800px) {
+        transform: translateX(80%);
+    }
+
+    // clip-path
+    &_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+        clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+        transition: all 1s;
+
+        @media only screen and (max-width: 600px) {
+            clip-path: polygon(-40% 0,100% 0,100% 100%,30% 15%,-30% 14%);
+        }
+        @media only screen and (max-width: 400px) {
+            clip-path: polygon(-40% 0,100% 0,100% 100%,30% 40%,-27% 25%);
+        }
+
+        &_content {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    // checkboxs
+    &_open, &_close {
+        display: none
+    }
+    // style input labels
+    &_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 7rem;
+        width: 7rem;
+        position: absolute;
+        z-index: 2000;
+        
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        transform: translateY(-50%);
+        transition: .3s;
+        // open video section button
+        &--open {
+            position: relative;
+            top: 50%;
+            left: 6%;
+            background-color: $color-primary;
+            border: solid 1px lighten($color-primary, 30%);
+            box-shadow: 0 1rem 3rem rgba($color-primary, .1);
+            overflow: hidden;
+            
+            @media only screen and (max-width: 600px) {
+                top: 8%;
+                left: 0;
+            }
+
+            // reflection effect on open video button
+            &::before {
+                content: "";
+                position: absolute;
+                height: 3px;
+                width: 12rem;
+                background: $color-grey-light-1;
+                
+                transform-origin: center;
+                transform: translateX(2px) rotate(-40deg) translateY(-45px);
+                animation-name: reflection;
+                animation-timing-function: ease-out;
+                animation-duration: 1s;
+                animation-delay: 2s;
+                
+                opacity: .8;
+                filter: blur(3px)
+            }
+            &:hover {
+                background-color: darken($color-primary, 5%);
+            }
+        }
+        // close video section button
+        &--close {
+            top: 10%;
+            right: 10%;
+            background-color: $color-secondary;
+            border: solid 1px lighten($color-secondary, 10%);
+            box-shadow: 0 1rem 3rem rgba($color-secondary, .1);
+            opacity: 0;
+            visibility: hidden;
+            &:hover {
+                background-color: darken($color-secondary, 5%);
+            }
+        }
+    }
+    // icons in buttons
+    &_icon--open { 
+        height: 3rem;
+        width: 3rem;
+        line-height: 0;
+        fill: $color-grey-light-1;
+    }
+
+    &_icon--close { 
+        height: 2rem;
+        width: 2rem;
+        line-height: 0;
+        fill: $color-grey-light-1;
+    }
+}
+
+// open video section toggle button (checkbox)
+.video_open:checked {
+    // show video section
+    & ~ .video {
+        transform: translateX(0%);
+        background: $color-grey-light-1;
+    }
+    // hide open button
+    & ~ .video .video_btn--open {
+        opacity: 0;
+        visibility: hidden;
+    }
+    // show close button
+    & ~ .video .video_btn--close {
+        opacity: 1;
+        visibility: visible;
+    }
+    // change clip-path
+    & ~ .video .video_bg {
+        border-radius: 0px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    // add fitler on bg video
+    & ~ .video .video_bg_content {
+        filter: brightness(20%);
+    }
+    // show youtube video
+    & ~ .video .video_frame {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%);
+        display: block;
+    }
+}
+
+// responsive youtube video container
+.video_frame {
+    width: 100%;
+    max-width: 853px;
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+    transition: .2s;
+
+    &_wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 2px 30px -4px rgba($color-grey-dark-1, 0.75);
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

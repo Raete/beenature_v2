@@ -1,0 +1,60 @@
+// discover section
+.card {
+    animation-name: toUp;
+    animation-timing-function: ease-out;
+    // card animation
+    &--1 { animation-duration: .3s; }
+    &--2 { animation-duration: .6s; }
+    &--3 { animation-duration: .9s; }
+    &--4 { animation-duration: 1.2s; }
+    // card image
+    &_img {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 5px;
+        margin: 20px 0;
+        transition: .3s;
+
+        @media only screen and (max-width: 1260px) {
+            height: 10rem;
+            width: 10rem;
+        }
+        
+        &--1 {
+            background-image: url("../assets/img/img01c.jpg");  
+            background-size: cover;
+        }
+        &--2 {
+            background-image: url("../assets/img/img02c.jpg"); 
+            background-size: cover; 
+        }
+        &--3 {
+            background-image: url("../assets/img/img03c.jpg");
+            background-size: cover;  
+        }
+        &--4 {
+            background-image: url("../assets/img/img04c.jpg"); 
+            background-size: cover; 
+        }
+    }
+
+    &_rating {
+        display: flex;
+        margin: 10px 0;
+        &_item {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            background: $color-primary;
+            &:not(:last-child) {
+                margin-right: 3px;
+            }
+        }
+    }
+}
+
+
+
+
+
+

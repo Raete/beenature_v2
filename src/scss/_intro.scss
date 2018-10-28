@@ -1,0 +1,45 @@
+// intro section
+.intro {
+    display: grid;
+    grid-template-rows: 80px 1fr min-content 1fr;
+    grid-template-columns: 1fr 4fr 5%;
+    grid-template-areas: 
+        ". logo ."
+        ". claim ."
+        ". title ."
+        ". cards .";
+   
+    width: 70vw;
+    height: 100vh;
+    background: $color-grey-light-1;
+    color: $color-secondary;
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: 10% 4fr 10%;
+         width: 100vw;
+    }
+    @media only screen and (max-width: 400px) {
+        grid-template-rows: 80px 1fr min-content;
+    grid-template-columns: 10% 4fr 10%;
+    grid-template-areas: 
+        ". logo ."
+        ". claim ."
+        ". title ."
+    }
+    
+   // overflow: hidden;
+    &_logo {
+        grid-area: logo;;
+        align-self: end;
+        height: 3.5rem;
+    }
+    &_claim {
+        max-width: 70rem;
+        grid-area: claim;
+        align-self: center;
+        animation-name: toDown;
+        animation-duration: .8s;
+        animation-timing-function: ease-out;
+    }
+}
+
